@@ -17,11 +17,8 @@ cell_B = 0.4
 regle_1_a = 2
 regle_1_b = 3
 
-regle_2_a =3
+regle_2_a = 3
 regle_2_b = 0
-
-
-
 
 # compteur
 nombre_cycle = 0
@@ -34,28 +31,38 @@ grid = np.random.choice([0, 1], size=(gril_X, gril_Y), p=[cell_A, cell_B])
 fig, ax = plot.subplots()
 
 
-def update(frame):
+def rerun(event) :
+    global grid
+    grid = np.random.choice([0, 1], size=(gril_X, gril_Y), p=[cell_A, cell_B])
+    ax.clear()
+    nombre_cycle = 0
+    anim.frame_seq = anim.new_frame_seq()
+    anim.event_source.start()
+    #anim.event_source.interval = 200
+
+
+def update(frame) :
     global grid, nombre_cycle, cycle_detect, etat
 
     new_grid = np.copy(grid)
-    for i in range(gril_X):
-        for o in range(gril_Y):
+    for i in range(gril_X) :
+        for o in range(gril_Y) :
             # on compte les voisin vivant
-            vivant = np.sum(grid[max(0, i - 1):min(gril_X, i + 2), max(0, o - 1):min(gril_Y, o + 2)]) - grid[i, o]
-            if grid[i, o] == 1:
+            vivant = np.sum(grid[max(0, i - 1) :min(gril_X, i + 2), max(0, o - 1) :min(gril_Y, o + 2)]) - grid[i, o]
+            if grid[i, o] == 1 :
                 # regle pour une cellule vivante
-                if vivant < regle_1_a or vivant > regle_1_b:
+                if vivant < regle_1_a or vivant > regle_1_b :
                     new_grid[i, o] = 0
-            else:
+            else :
                 # Regle pour une cellule morte
-                if vivant == regle_2_a:
+                if vivant == regle_2_a :
                     new_grid[i, o] = 1
 
-    if not cycle_detect:
+    if not cycle_detect :
         etat_current = new_grid.tobytes()
-        if etat_current in etat:
+        if etat_current in etat :
             cycle_detect = True
-        else:
+        else :
             etat.append(etat_current)
             nombre_cycle += 1
 
@@ -65,10 +72,13 @@ def update(frame):
     return ax
 
 
-
 # plateau = plot.figure()
 #
 # img = plot.imshow(grid, interpolation='nearest', cmap='binary')
+
+rerun_button_ax = plot.axes([0.8,0.05,0.1,0.075])
+rerun_button = Button(rerun_button_ax, 'Encore')
+rerun_button.on_clicked(rerun)
 
 anim = animation.FuncAnimation(fig, update, frames=100, interval=200)
 
