@@ -2,11 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 from matplotlib.widgets import Button
+import customtkinter as custom
 
+
+
+
+custom.set_appearance_mode("dark")
+app = custom.CTk()
+app
 # les  constante
 
-gril_X = 10
-gril_Y = 10
+gril_X = 20
+gril_Y = 20
 
 # Probabilite cellule morte et celulle vivante
 cell_A = 0.6
@@ -37,8 +44,9 @@ def rerun(event) :
     ax.clear()
     nombre_cycle = 0
     anim.frame_seq = anim.new_frame_seq()
-    anim.event_source.start()
-    #anim.event_source.interval = 200
+    #anim.event_source.start()
+    anim.event_source.interval = 200
+    ax.set_title(f"")
 
 
 def update(frame) :
@@ -72,14 +80,28 @@ def update(frame) :
     return ax
 
 
+def rerun(event) :
+    global grid
+    grid = np.random.choice([0, 1], size=(gril_X, gril_Y), p=[cell_A, cell_B])
+    ax.clear()
+    nombre_cycle = 0
+    anim.frame_seq = anim.new_frame_seq()
+    #anim.event_source.start()
+    anim.event_source.interval = 200
+    ax.set_title(f"")
+
+
 # plateau = plot.figure()
 #
 # img = plot.imshow(grid, interpolation='nearest', cmap='binary')
 
-rerun_button_ax = plot.axes([0.8,0.05,0.1,0.075])
-rerun_button = Button(rerun_button_ax, 'Encore')
-rerun_button.on_clicked(rerun)
+restart_button_ax = plot.axes([0.8, 0.05, 0.1, 0.075])
+restart_button = Button(restart_button_ax, 'Encore')
+restart_button.on_clicked(rerun)
+
+
 
 anim = animation.FuncAnimation(fig, update, frames=100, interval=200)
+
 
 plot.show()
