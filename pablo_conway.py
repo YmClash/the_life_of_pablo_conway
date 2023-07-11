@@ -31,19 +31,20 @@ label.pack(padx=10,pady=12)
 
 entre_grill_x = custom.CTkEntry(master=frame,placeholder_text="Gril_X")
 entre_grill_x.pack(padx=10,pady=12)
-entre_grill_y =custom.CTkEntry(master=frame,placeholder_text="Grill_Y")
+entre_grill_y =custom.CTkEntry(master=frame,placeholder_text="Gril_Y")
 entre_grill_y.pack(padx=10,pady=12)
+
+def grid_size():
+    gril_X= entre_grill_x.get()
+    gril_Y = entre_grill_y.get()
+    print(f'Grille X : {gril_X} '
+          f'Grille Y : {gril_Y}')
 
 
 
 # les  constante
-gril_X = 10
-gril_Y = 10
-def grid_size():
-    gril_X = entre_grill_x.get()
-    gril_Y = entre_grill_x.get()
-    print(f'Grille X : {gril_X} '
-          f'Grille Y : {gril_Y}')
+gril_X = grid_size()
+gril_Y = grid_size()
 
 
 
@@ -183,6 +184,7 @@ run_button = custom.CTkButton(master=frame,text="Run",command=run)
 run_button.pack(padx=10,pady=12)
 exit_button = custom.CTkButton(master=frame,text="Exit",command=exit)
 exit_button.pack(padx=10,pady=12)
+
 
 
 
