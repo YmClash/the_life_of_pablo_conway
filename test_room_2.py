@@ -12,7 +12,6 @@ app.geometry("1000x700")
 
 def login():
     log = entre_2.get()
-    while log is not == momo:
 
     print(f"login test Bienvenue: {log}")
 

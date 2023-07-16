@@ -43,8 +43,8 @@ def grid_size():
 
 
 # les  constante
-gril_X = grid_size()
-gril_Y = grid_size()
+gril_X = 10
+gril_Y = 10
 
 
 
