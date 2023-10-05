@@ -5,7 +5,6 @@ from matplotlib.widgets import Button
 import customtkinter as custom
 import sys
 
-
 # def rerun(event) :
 #     global grid
 #     grid = np.random.choice([0, 1], size=(gril_X, gril_Y), p=[cell_A, cell_B])
@@ -15,7 +14,6 @@ import sys
 #     #anim.event_source.start()
 #     anim.event_source.interval = 200
 #     ax.set_title(f"")
-
 
 custom.set_appearance_mode("dark")
 custom.set_default_color_theme("dark-blue")

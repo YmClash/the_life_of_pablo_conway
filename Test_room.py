@@ -20,7 +20,7 @@ app.geometry("400x400")
 # textbox.grid(row=0,column=1)
 
 entre = custom.CTkEntry(app,width=50,height=20,placeholder_text="Entre")
-entre.pack(after=)
+
 
 #
 # button_run = custom.CTkButton(app, text="run",bg_color="black",command= hallo)
