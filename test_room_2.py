@@ -7,11 +7,11 @@ customtkinter.set_default_color_theme("dark-blue")
 
 
 app = customtkinter.CTk()
-app.geometry("1000x700")
+app.geometry("350x350")
 
 
 def login():
-    log = entre_2.get()
+    log = entre_1.get()
 
     print(f"login test Bienvenue: {log}")
 
