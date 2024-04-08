@@ -5,6 +5,10 @@ from matplotlib.widgets import Button
 import customtkinter as custom
 import sys
 
+
+np.random.seed(seed=27)
+
+
 # def rerun(event) :
 #     global grid
 #     grid = np.random.choice([0, 1], size=(gril_X, gril_Y), p=[cell_A, cell_B])
@@ -71,10 +75,11 @@ cycle_detect = False
 etat = []
 
 def print_variable_value():
-    print(f"gril x :{gril_X}"
-          f"gril y : {gril_Y}"
-          f"cell a : {cell_A}"
-          f"cell b : {cell_B}")
+    print(f"gril x :{gril_X}\n"
+          f"gril y : {gril_Y}\n"
+          f"cell a : {cell_A}\n"
+          f"cell b : {cell_B}\n")
+
 print_button= custom.CTkButton(master=frame,text="Print Type",command=print_variable_value)
 print_button.pack(padx=10,pady=12)
 # grid = np.zeros((X, Y))
