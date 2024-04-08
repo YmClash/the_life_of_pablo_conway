@@ -12,8 +12,10 @@ app.geometry("350x350")
 
 def login():
     log = entre_1.get()
+    password  = entre_2.get()
 
     print(f"login test Bienvenue: {log}")
+    print("Password: ",password)
 
 
 def exit():
