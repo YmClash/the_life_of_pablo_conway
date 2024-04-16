@@ -6,8 +6,10 @@ import customtkinter as custom
 import sys
 
 
-np.random.seed(seed=27)
 
+seed = 66
+
+np.random.seed(seed=seed)
 
 # def rerun(event) :
 #     global grid
@@ -23,7 +25,7 @@ custom.set_appearance_mode("dark")
 custom.set_default_color_theme("dark-blue")
 
 app = custom.CTk()
-app.geometry("500x350")
+app.geometry("500x500")
 
 frame = custom.CTkFrame(master=app)
 frame.pack(padx=60,pady=20,fill="both", expand=True)
@@ -79,6 +81,8 @@ def print_variable_value():
           f"gril y : {gril_Y}\n"
           f"cell a : {cell_A}\n"
           f"cell b : {cell_B}\n")
+    print("Seed:",seed)
+
 
 print_button= custom.CTkButton(master=frame,text="Print Type",command=print_variable_value)
 print_button.pack(padx=10,pady=12)
@@ -91,6 +95,7 @@ fig, ax = plot.subplots()
 
 def exit():
     print("Exit")
+    print(nombre_cycle)
     sys.exit()
 
 
