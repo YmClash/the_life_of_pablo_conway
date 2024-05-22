@@ -7,7 +7,7 @@ import sys
 
 
 
-seed = 66
+seed = 59
 
 np.random.seed(seed=seed)
 
