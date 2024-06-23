@@ -52,7 +52,20 @@ def mark_square(row,col,player):
 
 
 
-def avalaible_square
+def avalaible_square(row,col):
+     return board[row][col] == 0
+
+
+def is_board_full(check_board=board):
+    for row in range(BOARD_ROWS):
+        for col in range(BOARD_COLS):
+            if check_board[row][col] == 0:
+                return True
+    return False
+
+
+def check_win(player,check_board=board):
+
 
 
 
