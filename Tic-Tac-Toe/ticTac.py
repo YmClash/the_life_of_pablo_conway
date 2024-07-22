@@ -41,9 +41,9 @@ def draw_figures(color=WHITE):
         for col in range(BOARD_COLS):
             if board[row][col] == 1:
                 pygame.draw.circle(screen,color,(int(col*SQUARE_SIZE*SQUARE_SIZE //2),int(row*SQUARE_SIZE*SQUARE_SIZE // 2)),CERCLE_RADIUIS,CERCLE_SIZE)
-            elif board[row][col] == 2_
-            pygame.draw.line(screen,color,(col*SQUARE_SIZE+SQUARE_SIZE // 4,row*SQUARE_SIZE+SQUARE_SIZE // 4))
-            pygame.draw.line(screen,color,(col*SQUARE_SIZE+SQUARE_SIZE // 4,row*SQUARE_SIZE+ 3 * SQUARE_SIZE // 4))
+            elif board[row][col] == 2 :
+                pygame.draw.line(screen,color,(col*SQUARE_SIZE+SQUARE_SIZE // 4,row*SQUARE_SIZE+SQUARE_SIZE // 4))
+                pygame.draw.line(screen,color,(col*SQUARE_SIZE+SQUARE_SIZE // 4,row*SQUARE_SIZE+ 3 * SQUARE_SIZE // 4))
 
 
 
@@ -65,6 +65,7 @@ def is_board_full(check_board=board):
 
 
 def check_win(player,check_board=board):
+    pass
 
 
 

@@ -43,6 +43,7 @@ def grid_size():
     gril_Y = entre_grill_y.get()
     print(f'Grille X : {gril_X} '
           f'Grille Y : {gril_Y}')
+    return  gril_X,gril_Y
 
 
 
@@ -60,8 +61,8 @@ set_button.pack(padx=10,pady=12)
 
 
 # Probabilite cellule morte et celulle vivante
-cell_A = 0.6
-cell_B = 0.4
+cell_A = 0.7
+cell_B = 0.3
 
 # les regle
 

@@ -1,7 +1,6 @@
 import pygame
 import random
 import time
-from icecream import ic
 
 pygame.init()
 
